@@ -3,13 +3,14 @@ API_KEY = "APPID=af8425eab3b3aa4292a1f637f44d97de"
 const button = document.querySelector("button")
 const cityOption = document.querySelector("input")
 const mainDiv =  document.querySelector(".main")
-
+const moreButton = document.querySelector(".moreButton")
+const hiddenDiv = document.querySelector(".hidden")
 
 button.addEventListener("click", async () => {
 
     let cityName = cityOption.value
     let response = await axios.get(`${BASE_URL}${cityName}&${API_KEY}&units=imperial`)
-    // console.log(response.data.main)
+    console.log(response.data)
 
 
     let condition = response.data.weather[0].description
@@ -18,9 +19,16 @@ button.addEventListener("click", async () => {
     let minTemp = response.data.main.temp_min
     let maxTemp = response.data.main.temp_max
     
-    mainDiv.innerHTML = (`<p>Condition: ${condition}</p> <br> <p> Current Temp: ${temp}° F</p> <br> <p>Currently Feels like: ${feelsLike}° F</p> <br> <p>Daily Minimum Temp: ${minTemp}° F</p> <br> <p>Daily Maximum Temp: ${maxTemp}° F</p>`) 
+    mainDiv.innerHTML = `<p>Currently: ${condition} at ${temp}° F </p> <br> <p> Feels like: ${feelsLike}° F</p> <br>` 
+    
+    hiddenDiv.innerHTML = `<p>Daily Minimum Temp: ${minTemp}° F</p> <br> <p>Daily Maximum Temp: ${maxTemp}° F</p>` 
 
 
+})
+
+moreButton.addEventListener("click", () => {
+    hiddenDiv.classList.toggle("appear")
+    moreButton.textContent = "Less?"
 })
 
 
