@@ -55,7 +55,7 @@ ul li:hover a{
     color: white;
 }
 
-.main {
+.weatherData {
     height: 25vw;
     text-align: center;
     display: flex;
@@ -63,8 +63,18 @@ ul li:hover a{
     font-size: 3.5rem;
 }
 
-.main p:first-child{
+.weatherData p:first-child{
     padding-top: 2rem;
+}
+
+.weatherData p {
+    background-color: lightgrey;
+    width: 80%;
+    margin: 0 auto;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 10px 20px;
+    text-align: left;   
 }
 
 .moreButton {
@@ -119,7 +129,7 @@ button{
 }
 
 footer {
-    height: 3vw;
+    height: 5vw;
     background-color: black;
     margin-top: 10px;
 }

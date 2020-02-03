@@ -2,9 +2,10 @@ BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q="
 API_KEY = "APPID=af8425eab3b3aa4292a1f637f44d97de"
 const button = document.querySelector("button")
 const cityOption = document.querySelector("input")
-const mainDiv =  document.querySelector(".main")
+const weatherDiv =  document.querySelector(".weatherData")
 const moreButton = document.querySelector(".moreButton")
 const hiddenDiv = document.querySelector(".hidden")
+const main = document.querySelector("main")
 
 button.addEventListener("click", async () => {
 
@@ -19,16 +20,26 @@ button.addEventListener("click", async () => {
     let minTemp = response.data.main.temp_min
     let maxTemp = response.data.main.temp_max
     
-    mainDiv.innerHTML = `<p>Currently: ${condition} at ${temp}° F </p> <br> <p> Feels like: ${feelsLike}° F</p> <br>` 
+    weatherDiv.innerHTML = `<p>Currently: ${condition} at ${temp}° F </p> <br> <p> Feels like: ${feelsLike}° F</p>` 
     
-    hiddenDiv.innerHTML = `<p>Daily Minimum Temp: ${minTemp}° F</p> <br> <p>Daily Maximum Temp: ${maxTemp}° F</p>` 
-
+    hiddenDiv.innerHTML = `<p>Daily Minimum Temp: ${minTemp}° F</p> <br> <p>Daily Maximum Temp: ${maxTemp}° F</p>`
+    
+    if(cityName === "london"){
+        main.style.background = url("images/London_pic.jpg")
+    }
 
 })
 
+
+
 moreButton.addEventListener("click", () => {
     hiddenDiv.classList.toggle("appear")
-    moreButton.textContent = "Less?"
+    if (moreButton.textContent === "More?") {
+        moreButton.textContent = "Less?"
+    } else if (moreButton.textContent === "Less?") {
+        moreButton.textContent = "More?"
+    }
+
 })
 
 
