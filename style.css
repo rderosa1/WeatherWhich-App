@@ -163,7 +163,7 @@ input {
 }
 
 
-button {
+.press, .moreButton {
     width: 8vw;
     height: 8vw;
     border-radius: 50%;
@@ -250,13 +250,4 @@ footer img {
           color: white;
       }
 
-
-
-      /* .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-      .dropdown:hover .dropbtn {
-          background-color: #3e8e41;
-        } */ */
 }
