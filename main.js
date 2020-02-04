@@ -10,6 +10,7 @@ const main = document.querySelector("main")
 button.addEventListener("click", async () => {
 
     let cityName = cityOption.value
+
     let response = await axios.get(`${BASE_URL}${cityName}&${API_KEY}&units=imperial`)
     console.log(response.data)
 
@@ -24,9 +25,9 @@ button.addEventListener("click", async () => {
     
     hiddenDiv.innerHTML = `<p>Daily Minimum Temp: ${minTemp}° F</p> <br> <p>Daily Maximum Temp: ${maxTemp}° F</p>`
     
-    if(cityName === "london"){
-        main.style.background = url("images/London_pic.jpg")
-    }
+    // if(cityName === "london"){
+    //     main.style.background = url("images/London_pic.jpg")
+    // }
 
 })
 
@@ -39,6 +40,11 @@ moreButton.addEventListener("click", () => {
     } else if (moreButton.textContent === "Less?") {
         moreButton.textContent = "More?"
     }
+
+
+    function myFunction(x) {
+        x.classList.toggle("change");
+      }
 
 })
 
