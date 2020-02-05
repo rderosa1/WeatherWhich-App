@@ -150,10 +150,11 @@ section {
 }
 
 section p {
+    text-shadow: 1px 1px 1px whitesmoke, -1px -1px 1px whitesmoke;
     animation-name: pulse;
     animation-duration: 1s;
     animation-delay: 3s;
-    animation-iteration-count: 2    ;
+    animation-iteration-count: 2;
 }
 
 @keyframes pulse {

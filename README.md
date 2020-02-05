@@ -1,4 +1,10 @@
 # WeatherWhich-App
-// weatherWhich™ is a weather sharing App that takes advantage of the openweather API to source infomration about teh weather from most manjor cities in the world. 
+// weatherWhich™ is a weather sharing App that takes advantage of the openweather API to source infomration about the weather from most manjor cities in the world. 
 Simply type the name of the city of interest into the input search bar and you will be immediately returned important infomration regarding the weather there.
-For more information , press the more button to display previously hidden information. 
+For more information, press the more button to display previously hidden information. 
+
+I access the free openWeather weather API  using an axios.get request, and parse through object data received in order to target specific data, incuding current, max and min temps, and general weather conditions. Those data are set as values to variables, which are then appended to divs in the HTML and rendered using DOM manipulation. Some of the data has been set to a div with a class that is set initially to display: none in the CSS, then set to appear after the "more" button has been clicked. Also, when said button is clicked, it will change the text from "More?" to "Less?" If you press the button again, now saying "Less?", the information will disappear.
+
+The base url and appID key have been set as variables before the axios call, with the name of the city, input as a string by the user,as the only other variable necessary to access the openweather API. There are a number of options that, when chosen, will change the background of the app to a picture of the city the user chose, if no picture for that city choice exists, the deafult picture will populate the app background.
+
+The app is fully responsive using mostly flexbox, vw, and em/rem for sizing. The app is a single page that expands and shrinks as required and the background is always covered by an image. The flex-direction is set to column, so items compress naturally when changing browser sizes. The most noticable change during browser shrinking is the location of the nav bar, from the right bottom side of the header container, to the left bottom side of the header container, underneath the name of the app, to then morphing into a hamburger menu on the right side of he header container.
