@@ -4,7 +4,7 @@
 }
 
 header {
-    height: 100px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -147,6 +147,19 @@ section {
     margin: 3rem;  
     font-size: 6vw;
     font-family: 'Permanent Marker', cursive;
+}
+
+section p {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-iteration-count: 2    ;
+}
+
+@keyframes pulse {
+    0% {font-size:6vw}
+    50% {font-size:6.5vw}
+    100% {font-size:6vw}
 }
 
 .primerInfo {

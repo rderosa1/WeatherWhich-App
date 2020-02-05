@@ -6,7 +6,7 @@ const weatherDiv =  document.querySelector(".weatherData")
 const moreButton = document.querySelector(".moreButton")
 const hiddenDiv = document.querySelector(".hidden")
 const main = document.querySelector("main")
-const cityArray = ["new york", "london", "paris", "hong kong", "guadalajara", "la", "tokyo", "bangkok", "dubai", "singapore"]
+const cityArray = ["new york", "london", "paris", "hong kong", "guadalajara", "los angeles", "tokyo", "bangkok", "dubai", "singapore"]
 
 button.addEventListener("click", async () => {
 
@@ -29,6 +29,7 @@ button.addEventListener("click", async () => {
 
 })
 
+
 button.addEventListener("click", () => {
     let city = cityOption.value
     if(city == "london"){ 
@@ -49,7 +50,7 @@ button.addEventListener("click", () => {
         main.style.backgroundImage = "url('images/bangkok.jpeg')";
     } else if (city == "dubai") {
         main.style.backgroundImage = "url('images/dubai.jpeg')";
-    } else if (city = "singapre"){
+    } else if (city == "singapre"){
         main.style.backgroundImage = "url('images/singapore.jpeg')";
     } else {
         main.style.backgroundImage = "url('images/colorful-city-silhouette.jpg')";
